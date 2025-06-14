@@ -1,0 +1,1397 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f5f5f5;
+  font-size: 1em;
+  font-family: Lato, Helvetica, Arial, sans-serif;
+}
+
+/* ----------------------------------------------- Header Strap ------------------------------------------------------- */
+.top_header_strap {
+  width: 100%;
+  background-color: #ededed;
+  padding: 0em 1em;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.top_header_strap_rightContent {
+  display: flex;
+  align-items: center;
+  gap: 1.5em;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-btn {
+  background: transparent;
+  border: none;
+  font-size: 1em;
+  cursor: pointer;
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: auto;
+  right: 0;
+  min-width: 180px;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 1em 1.5em;
+  border-radius: 0.5em;
+  z-index: 10;
+  white-space: normal;
+}
+
+.dropdown-content a {
+  padding: 0.5em 1.2em;
+  display: block;
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.dropdown-content a:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown-content p {
+  margin-bottom: 0.8em;
+}
+
+.dropdown-content p:last-child {
+  margin-bottom: 0;
+}
+
+.dropdown-content hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 16px 0;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropdown-btn {
+  background-color: #fff;
+  border-radius: 0.5em 0.5em 0 0;
+  border-bottom: 3px solid red;
+}
+
+.dropdown:hover .arrow {
+  transform: rotate(180deg);
+}
+
+.hover-red-line {
+  position: relative;
+  padding: 0 10px;
+  display: inline-block;
+}
+
+.hover-red-line::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background-color: red;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease-in-out;
+}
+
+.hover-red-line:hover::after {
+  transform: scaleX(1);
+}
+
+.divider {
+  margin: 0 0px;
+  color: #aaa;
+}
+
+.navbar-links-right {
+  cursor: pointer;
+}
+
+.top_header_strap_fourImages {
+  display: flex;
+  align-items: center;
+  gap: 0.75em;
+}
+
+.top_header_strap_image {
+  width: 1em;
+  height: 1em;
+}
+
+/* ----------------------------------------------- Account dropdown specific styles --------------------------------------------- */
+.account-dropdown {
+  min-width: 320px;
+  padding: 0;
+  background: #f8f8f8;
+}
+
+.account-header {
+  background: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.account-header h3 {
+  font-size: 1.5em;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.account-header p {
+  color: #666;
+  font-size: 0.9em;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.signin-btn {
+  background: #000;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-size: 1em;
+  cursor: pointer;
+  width: 100%;
+  font-weight: 500;
+}
+
+.signin-btn:hover {
+  background: #333;
+}
+
+.account-links {
+  padding: 0;
+}
+
+.account-link {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px 20px;
+  text-decoration: none;
+  color: #333;
+  background: white;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.account-link:hover {
+  background: #f5f5f5;
+  text-decoration: underline;
+}
+
+.account-link:last-child {
+  border-bottom: none;
+}
+
+.account-link .icon {
+  font-size: 1.2em;
+  margin-top: 2px;
+}
+
+.account-link div {
+  flex: 1;
+}
+
+.account-link strong {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #000;
+}
+
+.account-link p {
+  font-size: 0.85em;
+  color: #666;
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* --------------------------------------------------- Navbar Styles --------------------------------------------------- */
+.navbar {
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  font-size: 1em;
+}
+
+.navbar-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2em 2em;
+  flex-wrap: wrap;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex: 1;
+}
+
+.navbar-left img.logo {
+  height: 42px;
+}
+
+.search-bar {
+  flex: 1;
+  max-width: 550px;
+  position: relative;
+  margin-left: 40px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 0.75em 2.5em 0.75em 1em;
+  border: 2px solid #444;
+  border-radius: 4px;
+  background-color: #f7f7f7;
+  font-size: 1em;
+}
+
+.search-bar svg {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  fill: #333;
+  pointer-events: none;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+.navbar-right .icon-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.navbar-right img {
+  height: 24px;
+}
+
+.navbar-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.9em 2em;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.navbar-links-left,
+.navbar-links-right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.navbar-links-left a,
+.navbar-links-right a {
+  text-decoration: none;
+  color: #000;
+  padding-bottom: 4px;
+  position: relative;
+  font-size: 1em;
+}
+
+.navbar-links-left a:hover::after,
+.navbar-links-right a:hover::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: red;
+}
+
+.navbar-links-right a:not(:last-child)::after {
+  content: "|";
+  margin-left: 10px;
+  margin-right: 10px;
+  color: #aaa;
+}
+
+/* --------------------------------------------------- Mega Dropdown Styles --------------------------------------------------- */
+.navbar-links-right .mega-dropdown {
+  position: relative;
+}
+
+.mega-dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 1200px;
+  background: white;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  z-index: 1000;
+  padding: 40px;
+  margin-top: 20px;
+}
+
+.mega-dropdown:hover .mega-dropdown-content {
+  display: block;
+}
+
+.mega-dropdown:hover::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: red;
+}
+
+.mega-content {
+  display: flex;
+  gap: 40px;
+  
+}
+
+.mega-column {
+  flex: 1;
+}
+
+.mega-column h3 {
+  font-size: 1.1em;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.mega-column ul {
+  list-style: none;
+}
+
+.mega-column li {
+  margin-bottom: 12px;
+}
+
+.mega-column a {
+  color: #666;
+  text-decoration: none;
+  font-size: 0.95em;
+  transition: color 0.2s;
+}
+
+.mega-column a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+.mega-featured {
+  flex: 0 0 350px;
+  background: #f8f8f8;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+}
+
+.mega-featured img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.mega-featured h4 {
+  font-size: 1.2em;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.mega-featured p {
+  font-size: 0.9em;
+  color: #666;
+  line-height: 1.4;
+}
+
+/* Gaming Dropdown Specific */
+.gaming-featured {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  color: white;
+}
+
+.gaming-featured h4 {
+  color: white;
+}
+
+.gaming-featured p {
+  color: #ccc;
+}
+
+/* Education Dropdown Specific */
+.education-featured {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+}
+
+.education-featured h4 {
+  color: white;
+}
+
+.education-featured p {
+  color: #f0f0f0;
+}
+
+@media (max-width: 768px) {
+  .navbar-top,
+  .navbar-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-left {
+    width: 100%;
+    gap: 1em;
+    flex-direction: column;
+  }
+
+  .search-bar {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 1em;
+  }
+
+  .navbar-right {
+    margin-top: 1em;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .navbar-links-left,
+  .navbar-links-right {
+    width: 100%;
+    margin-top: 1em;
+  }
+
+  .mega-dropdown-content {
+    width: 100vw;
+    right: -2em;
+    padding: 20px;
+  }
+
+  .mega-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .mega-featured {
+    flex: none;
+  }
+}
+
+/* ------------------------------------------- Bottom strap, Just after the navbar --------------------------------------------- */
+.product-nav-strap {
+  width: 100%;
+  background-color: #EDEDED;
+  padding: 5px;
+  border-bottom: 1px solid #ddd;
+}
+
+.product-nav-content {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 0 2em;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.nav-item {
+  padding: 1em 1.2em;
+  text-decoration: none;
+  color: #333;
+  font-size: 0.85em;
+  font-weight: 500;
+  position: relative;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.nav-item:hover {
+  background-color: white;
+  color: #333;
+  border-radius: 0.5em 0.5em 0 0;
+}
+
+.nav-item:hover::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: red;
+}
+
+@media (max-width: 1200px) {
+  .product-nav-content {
+    padding: 0 1em;
+  }
+  
+  .nav-item {
+    padding: 1em 1em;
+    font-size: 0.8em;
+  }
+}
+
+/* ------------------------------------------- Lenovo Carousel (next arrows) --------------------------------------------- */
+.carousel-hero-container {
+            position: relative;
+            width: 100%;
+            height: 538px;
+            overflow: hidden;
+        }
+
+        .carousel-slide-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .carousel-slide-wrapper.active-slide-state {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .carousel-slide-wrapper.prev-slide-state {
+            transform: translateX(-100%);
+        }
+
+        .carousel-content-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 0 5%;
+        }
+
+        .carousel-brand-logo {
+            position: relative;
+            margin-bottom: 15px;
+            z-index: 10;
+        }
+
+        .carousel-brand-logo img {
+            height: 60px;
+            width: auto;
+        }
+
+        .carousel-text-section {
+            max-width: 600px;
+            margin-top: 80px;
+        }
+
+        .carousel-subtitle-text {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .carousel-main-heading {
+            color: #ffffff;
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 25px;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .carousel-cta-button {
+            background-color: #ffffff;
+            color: #333333;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Arial', sans-serif;
+            text-transform: none;
+        }
+
+        .carousel-cta-button:hover {
+            background-color: #f0f0f0;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .carousel-nav-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.4);
+            border: none;
+            color: #ffffff;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            z-index: 15;
+        }
+
+        .carousel-nav-arrow:hover {
+            background-color: rgba(0, 0, 0, 0.6);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-prev-arrow {
+            left: 30px;
+        }
+
+        .carousel-next-arrow {
+            right: 30px;
+        }
+
+        .carousel-dots-indicator {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 15;
+        }
+
+        .carousel-dot-item {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-dot-item.active-dot-state {
+            background-color: #ffffff;
+            transform: scale(1.2);
+        }
+
+        @media (max-width: 768px) {
+            .carousel-main-heading {
+                font-size: 24px;
+            }
+            
+            .carousel-text-section {
+                max-width: 90%;
+                margin-top: 60px;
+            }
+            
+            .carousel-brand-logo {
+                margin-bottom: 12px;
+            }
+            
+            .carousel-brand-logo img {
+                height: 40px;
+            }
+            
+            .carousel-nav-arrow {
+                width: 32px;
+                height: 32px;
+                font-size: 14px;
+            }
+        }
+
+
+/* ----------------------------------------------- Explore Lenovo Circles ------------------------------------------------- */
+.zenithrix-exploration-header {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 40px 0 20px 0;
+            background-color: #ffffff;
+            width: 100%;
+        }
+
+        .quantum-title-wrapper {
+            font-size: 48px;
+            font-weight: 400;
+            color: #333333;
+            margin-bottom: 30px;
+            letter-spacing: -1px;
+            padding: 0 20px;
+        }
+
+        .nebula-navigation-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            gap: 10px;
+            flex-wrap: wrap;
+            width: 100%;
+            padding: 0 20px;
+        }
+
+        .cosmic-item-pillar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            flex: 1;
+            min-width: 120px;
+            max-width: 160px;
+        }
+
+        .stellar-icon-bubble {
+            width: 80px;
+            height: 80px;
+            background-color: #f5f5f5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .stellar-icon-bubble:hover {
+            background-color: #e8e8e8;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .galactic-symbol-image {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+        }
+
+        .astral-label-text {
+            font-size: 16px;
+            color: #333333;
+            font-weight: 400;
+            line-height: 1.4;
+            transition: color 0.3s ease;
+        }
+
+        .cosmic-item-pillar:hover .astral-label-text {
+            color: #0066cc;
+        }
+
+        .cosmic-item-pillar:hover .stellar-icon-bubble {
+            border-color: #0066cc;
+        }
+
+        @media (max-width: 768px) {
+            .nebula-navigation-container {
+                justify-content: center;
+                gap: 30px;
+            }
+
+            .cosmic-item-pillar {
+                min-width: 100px;
+                max-width: 120px;
+            }
+
+            .stellar-icon-bubble {
+                width: 70px;
+                height: 70px;
+            }
+
+            .galactic-symbol-image {
+                width: 35px;
+                height: 35px;
+            }
+
+            .quantum-title-wrapper {
+                font-size: 36px;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nebula-navigation-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cosmic-item-pillar {
+                margin-bottom: 20px;
+            }
+        }
+
+/* ----------------------------------------------- Explore Products main strap ------------------------------------------------- */
+.quantum_product_exploration_zone {
+            width: 100%;
+            padding: 60px 40px;
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .nebula_section_header_constellation {
+            margin-bottom: 50px;
+        }
+
+        .cosmic_main_title_supernova { 
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #2c3e50;
+            margin: 0 0 10px 0;
+            letter-spacing: -0.02em;
+        }
+
+        .stellar_subtitle_pulsar {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 0 0 10px 0;
+        }
+
+        .galactic_card_container_matrix {
+            display: flex;
+            gap: 30px;
+            width: 100%;
+        }
+
+        .dimensional_product_card_vortex {
+            flex: 1;
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .dimensional_product_card_vortex:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .ethereal_image_portal_nexus {
+            width: 100%;
+            height: 280px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ethereal_image_portal_nexus img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .mystical_content_sanctuary_realm {
+            padding: 35px 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .arcane_product_title_enigma { 
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin: 0 0 15px 0;
+            line-height: 1.2;
+        }
+
+        .enchanted_description_codex {
+            font-size: 1rem;
+            color: #7f8c8d;
+            line-height: 1.6;
+            margin: 0 0 30px 0;
+            flex-grow: 1;
+        }
+
+        .legendary_action_button_catalyst {
+            display: inline-block;
+            padding: 14px 28px;
+            border: 2px solid #34495e;
+            background: transparent;
+            color: #34495e;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            text-align: center;
+            align-self: flex-start;
+        }
+
+        .legendary_action_button_catalyst:hover {
+            background: #000000;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Responsive design for smaller screens */
+        @media (max-width: 768px) {
+            .galactic_card_container_matrix {
+                flex-direction: column;
+            }
+            
+            .cosmic_main_title_supernova {
+                font-size: 2.5rem;
+            }
+            
+            .quantum_product_exploration_zone {
+                padding: 40px 20px;
+            }
+        }
+
+        /* Special gradient overlays for each card */
+        .dimensional_product_card_vortex:nth-child(1) .ethereal_image_portal_nexus {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .dimensional_product_card_vortex:nth-child(2) .ethereal_image_portal_nexus {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .dimensional_product_card_vortex:nth-child(3) .ethereal_image_portal_nexus {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+/* ----------------------------------------------- Explore Products main strap slider ------------------------------------------------- */
+
+/* -------------------------------------------------------- Footer Section ----------------------------------------------------------- */
+
+.footer-container {
+            background-color: #e8e8e8;
+            padding: 40px 60px 20px;
+            max-width: 1490px;
+            
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .email-signup {
+            flex: 1;
+            max-width: 450px;
+        }
+
+        .email-signup h3 {
+            font-size: 16px;
+            font-weight: normal;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .email-form {
+            display: flex;
+            position: relative;
+        }
+
+        .email-input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .email-submit {
+            background-color: transparent;
+            border: 1px solid #ccc;
+            border-left: none;
+            padding: 12px 15px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .email-submit:hover {
+            background-color: #f0f0f0;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .facebook { background-color: #3b5998; }
+        .twitter { background-color: #1da1f2; }
+        .linkedin { background-color: #0077b5; }
+        .youtube { background-color: #ff0000; }
+        .instagram { background-color: #e4405f; }
+
+        .country-selector {
+            position: relative;
+        }
+
+        .country-label {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .country-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .country-select {
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 10px 35px 10px 40px;
+            font-size: 14px;
+            cursor: pointer;
+            min-width: 200px;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+        }
+
+        .country-select:hover {
+            border-color: #999;
+        }
+
+        .flag-icon {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 15px;
+            border-radius: 2px;
+            background: linear-gradient(to bottom, #ff9933 0%, #ff9933 33%, white 33%, white 66%, #138808 66%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .dropdown-arrow {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 12px;
+            color: #666;
+            pointer-events: none;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h4 {
+            font-size: 14px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column a {
+            color: #666;
+            text-decoration: none;
+            font-size: 13px;
+            line-height: 1.4;
+        }
+
+        .footer-column a:hover {
+            color: #333;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #ccc;
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .copyright {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            font-size: 12px;
+            color: #666;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: #333;
+        }
+
+        .help-section {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .feedback-btn {
+            background: none;
+            border: none;
+            color: #0066cc;
+            font-size: 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .feedback-btn:hover {
+            text-decoration: underline;
+        }
+
+        .help-text {
+            font-size: 14px;
+            color: #333;
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: #666;
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .scroll-top:hover {
+            background-color: #333;
+        }
+
+        @media (max-width: 1024px) {
+            .footer-content {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            
+            .footer-top {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-container {
+                padding: 20px;
+            }
+        }
+
+
+
+
+
+
+
+        /* Tablet View */
+@media (max-width: 992px) {
+  .top-strap,
+  .bottom-strap,
+  nav ul,
+  .dropdown,
+  .dropdown-content,
+  .login-section,
+  .featured-deals {
+    flex-direction: column !important;
+    align-items: center;
+    text-align: center;
+  }
+
+  nav ul {
+    gap: 15px;
+  }
+
+  .dropdown-content {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+  }
+
+  .login-section {
+    max-width: 90%;
+  }
+
+  .hero-title {
+    font-size: 24px;
+  }
+
+  .benefits-list li {
+    font-size: 15px;
+  }
+
+  .contact-button {
+    margin-top: 10px;
+  }
+}
+
+/* Mobile View */
+@media (max-width: 576px) {
+  body {
+    font-size: 14px;
+  }
+
+  .logo {
+    width: 120px;
+  }
+
+  nav {
+    padding: 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero-section img {
+    width: 100%;
+    height: auto;
+  }
+
+  .featured-deals-text {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .bottom-strap {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .contact-button {
+    width: 90%;
+  }
+
+  hr {
+    width: 90%;
+  }
+}

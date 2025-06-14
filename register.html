@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lenovo Pro Business Store</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+    }
+
+    /* Top Header */
+    .top-bar {
+      background-color: #000;
+      color: #fff;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .top-bar .left {
+      display: flex;
+      align-items: center;
+    }
+
+    .top-bar .left img {
+      height: 30px;
+      margin-right: 10px;
+    }
+
+    .top-bar .right {
+      font-size: 14px;
+    }
+
+    /* Main Container */
+    .main-container {
+      max-width: 420px;
+      margin: 60px auto 20px;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .main-container h1 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .main-container p {
+      font-size: 14px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .main-container input[type="email"] {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 15px;
+    }
+
+    .checkbox-label {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .main-container button {
+      width: 100%;
+      padding: 12px;
+      background-color: #2a4e96;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      margin-top: 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .main-container .help {
+      margin-top: 15px;
+      color: #2a4e96;
+      font-size: 14px;
+    }
+
+    /* Divider aligned with login box */
+    .divider {
+      width: 100%;
+      max-width: 420px;
+      margin: 40px auto 20px;
+      border-top: 1px solid #ccc;
+    }
+
+    /* Benefits */
+    .benefits {
+      text-align: left;
+      max-width: 420px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .benefits h2 {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .benefits ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .benefits li {
+      margin-bottom: 10px;
+      padding-left: 20px;
+      position: relative;
+      font-size: 14px;
+    }
+
+    .benefits li::before {
+      content: '✓';
+      color: #0072c6;
+      position: absolute;
+      left: 0;
+    }
+
+    .learn-more {
+      text-align: center;
+      margin-top: 20px;
+      color: #2a4e96;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    /* Bottom Bar */
+    .bottom-bar {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #f2f2f2;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      font-size: 14px;
+      border-top: 1px solid #ccc;
+      gap: 15px;
+      flex-wrap: nowrap;
+      box-sizing: border-box;
+    }
+
+    .bottom-bar > * {
+      max-width: 100%;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-button {
+      background-color: #2a4e96;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 500px) {
+      .main-container {
+        margin: 40px auto;
+      }
+
+      .bottom-bar {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Header -->
+  <div class="top-bar">
+    <div class="left">
+      <img style="cursor: pointer;" onclick="redirectToHome()" src="https://p4-ofp.static.pub/fes/cms/2022/11/14/h82es5y402b4rh1089sf86ay7n9sdl721044.png" alt="Lenovo Logo">
+      <span>Pro for Business</span>
+    </div>
+    <div class="right">1-800-4199-733</div>
+  </div>
+
+  <!-- Login Section -->
+  <div class="main-container">
+    <h1>Lenovo Pro Business Store</h1>
+    <p>Enter your email address to sign in or to create an account.</p>
+    <input type="email" placeholder="Email Address">
+    <div class="checkbox-label">
+      <input type="checkbox" id="remember" />
+      <label for="remember">&nbsp;Remember me</label>
+    </div>
+    <button>Continue</button>
+    <div class="help">Call: 1-800-4199-733 for help</div>
+  </div>
+
+  <!-- Divider -->
+  <div class="divider"></div>
+
+  <!-- Benefits -->
+  <div class="benefits">
+    <h2>Benefits of Lenovo Pro</h2>
+    <ul>
+      <li>Exclusive offers on our range of business-ready PCs</li>
+      <li>Dedicated Account Managers for your IT needs</li>
+      <li>Buy More. Save More</li>
+      <li>GST Benefits</li>
+      <li>Easy Leasing & Finance Options Available</li>
+    </ul>
+    <div class="learn-more">Learn More about LenovoPRO</div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="bottom-bar">
+    <div>Need Help? Call: 1-800-4199-733</div>
+    <button class="contact-button">Contact Us</button>
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>
